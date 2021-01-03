@@ -754,23 +754,23 @@ map.on('zoomend', function() {
 });
 
 // Incrémentation du score
-// Points en fonction de la valise
+// Points en fonction du contenu de la valise
 // Quantité de points gagnés en fonction de la difficulté à les trouver
 function setScore(){
-	if(lunettes.innerHTML == "Lunettes"){
+	if((lunettes.innerHTML == "Lunettes")&&(clé.innerHTML != "Clé")){
 		score += 16;
-	} if(clé.innerHTML == "Clé"){
-		score += 2;
-	} if(lettre.innerHTML == "Lettre"){
-		score += 0;
-	} if(cassette.innerHTML == "Cassette"){
-		score += 0;
-	} if(ciseaux.innerHTML == "Ciseaux"){
-		score += 2;
-	} if(micro.innerHTML == "Micro"){
-		score += 0;
+	} if((clé.innerHTML == "Clé")&&(lettre.innerHTML != "Lettre")){
+		score += 18;
+	} if((lettre.innerHTML == "Lettre")&&(cassette.innerHTML != "Cassette")){
+		score += 16;
+	} if((cassette.innerHTML == "Cassette")&&(ciseaux.innerHTML != "Ciseaux")){
+		score += 16;
+	} if((ciseaux.innerHTML == "Ciseaux")&&(micro.innerHTML != "Micro")){
+		score += 18;
+	} if((micro.innerHTML == "Micro")&&(telephone.innerHTML != "Telephone")){
+		score += 16;
 	} if(telephone.innerHTML == "Telephone"){
-		score += 0;
+		score += 8;
 	};
 	console.log(score);
 	sc.innerHTML = score;
