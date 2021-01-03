@@ -57,6 +57,11 @@ ul {
   margin-left: 20px;
 }
 
+#pseudo{
+  margin-right: 60px;
+  background-color: lightseagreen;
+}
+
 .enigme{
   font-size: 25px;
 }
