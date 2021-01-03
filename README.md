@@ -12,7 +12,7 @@ Versions :
 ## Consignes d'installations
 Afin de pouvoir jouer au jeu, il vous faudra :
   - Télecharger ce projet
-  - Le placer comme Document Root pour MAMP (si vous utilisez MacOS) ou autre
+  - Le placer comme Document Root pour MAMP (si vous utilisez MacOS) ou équivalent
   - Importer les deux bases de données sur MySQL : geograministe_base et joueur_base
   - ! ATTENTION !
   Si vous n'êtes pas sur MacOS, il faudra modifier les fichiers php de connexion aux bases de données. Le mot de passe de connexion ne sera plus "root" mais "".
