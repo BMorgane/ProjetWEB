@@ -17,5 +17,7 @@ Afin de pouvoir jouer au jeu, il vous faudra :
   - ! ATTENTION !
   Si vous n'êtes pas sur MacOS, il faudra modifier les fichiers php de connexion aux bases de données. Le mot de passe de connexion ne sera plus "root" mais "".
   - Le fichier par lequel commencer est index.html, il se charge normalement par défaut lors de l'appel du LocalHost.
+## Solutions du jeu
+Un fichier PDF est disponible parmi les fichiers pour tout expliquer
 ## Autrices
 Eliette FIZE et Morgane BATELIER, Cycle Ingénieur Géomaticien 2ème année
