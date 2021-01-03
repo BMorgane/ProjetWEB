@@ -1,5 +1,4 @@
 # Projet WEB - Ingénieur 2ème année - ENSG
-***
 Ce projet est un espace game géographique, réalisé dans le cadre de l'évaluation de la matière "Programmation WEB avancée".
 ## Géograministe
 ***
@@ -18,7 +17,7 @@ Afin de pouvoir jouer au jeu, il vous faudra :
   - Télecharger ce projet
   - Le placer comme Document Root pour MAMP (si vous utilisez MacOS) ou autre
   - Importer les deux bases de données sur MySQL : geograministe_base et joueur_base
-  ! ATTENTION !
+  - ! ATTENTION !
   Si vous n'êtes pas sur MacOS, il faudra modifier les fichiers php de connexion aux bases de données. Le mot de passe de connexion ne sera plus "root" mais "".
   - Le fichier par lequel commencer est index.html, il se charge normalement par défaut lors de l'appel du LocalHost.
 ## Autrices
