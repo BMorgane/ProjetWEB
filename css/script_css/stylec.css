@@ -1,0 +1,61 @@
+body{
+  background: linear-gradient(0deg, rgba(184,114,98,1) 70%, rgba(82,113,135,1) 100%);
+  color: white;
+  font-family: 'Courier Prime', monospace;
+}
+
+.en-tête{
+  height: 80px;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 1px 1px 1px LightGrey;
+}
+
+.marge{
+  height: 10px;
+}
+
+.margeh{
+  height: 80px;
+}
+
+#email{
+  color: darkred;
+}
+#nom{
+  color: darkred;
+}
+#prenom{
+  color: darkred;
+}
+
+.formulaire{
+  color: white;
+  font-size: 19px;
+  height: 900px;
+}
+
+textarea{
+  height: 200px;
+  width: 500px;
+}
+
+#texte{
+  font-family: 'League Script', cursive;
+  font-size: 22px;
+}
+
+#bouton{
+  font-family: 'League Script', cursive;
+  font-size: 22px;
+}
+
+.erreur{
+     background: darkred;
+}
+
+label{
+	display: block;
+	width: 200px;
+	float: left;
+}
