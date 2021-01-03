@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+<title> Géograministe Jeu </title>
+<meta charset="UTF8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+
+    <!-- Import js ajax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Import js bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Import css bootstrap -->
+    <link rel="stylesheet" href="css/import_css/bootstrap.min.css">
+    <!-- Import css leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <!-- Import sweetalert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <!-- Script css lié -->
+    <link rel="stylesheet" href="css/script_css/styles.css">
+    <!-- Police -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+
+  <body>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <div class="container-fluid en-tête">
+    <div class="row marge">
+      <div class="col-md-12"></div>
+     </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-2">
+          <p>    Géograministe </p>
+          </div>
+        <div class="col-md-6 col-sm-6">
+          <p id="sc">0</p>
+          </div>
+        <div class="col-md-1 col-sm-2">
+          <img class="img" width="80" src="assets/minuteur.png" alt="minuteur" />
+            </div>
+        <div class="col-md-2 col-sm-2"
+          <p class="minuteur" id="minuteur">01:00:00</p>
+          </div>
+        </div>
+     </div>
+     <div class="row margecarteh">
+       <div class="col-md-12"></div>
+      </div>
+      <div class="container">
+    <div id="mymap"></div>
+      </div>
+    <div class="container-fluid bas">
+    <div class="row margecarteb">
+      <div class="col-md-12"></div>
+     </div>
+    <div class="row basdepage">
+      <div class="col-md-5">
+        <h1> Indice :</h1>
+        <p id="indice">... </p>
+      </div>
+      <div class="col-md-5">
+      </div>
+      <div class="col-md-2">
+        <h1>Valise</h1>
+          <ul id="listeItem">
+            <li id="lunettes">...</li>
+            <li id="clé">...</li>
+            <li id="lettre">...</li>
+            <li id="cassette">...</li>
+            <li id="ciseaux">...</li>
+            <li id="micro">...</li>
+            <li id="telephone">...</li>
+          </ul>
+      </div>
+     </div>
+     </div>
+
+     <!-- Modal Pseudo -->
+     <div class="modal fade" id="Inscription" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Inscription</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="row enigme">
+               <p class="centered">Choisi ton Pseudo</p>
+              <div class="row">
+                <input id="pseudo" placeholder="Sherlock">  </input>
+              </div>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" onclick="setPseudo()">Jouer</button>
+
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Modal Michelle Obama -->
+     <div class="modal fade" id="MichelleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Enigme First-Lady</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="row enigme">
+               <p class="centered">Voici le code à décoder : 13 ;9 ;3 ;8 ;5 ;12 ;12 ;5 ;0 ;15 ;2 ;1 ;13 ;1</p>
+              <div class="row">
+                <input id="codeID" placeholder="Code">  </input>
+              </div>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" onclick="checkCode()">Verifier</button>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Modal Beyonce -->
+     <div class="modal fade" id="BeyonceModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Enigme Chanteuse</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="row enigme">
+               <p class="centered">A quelle chanteuse américaine appartient ce micro ?</p>
+               <p class="centered">Indice = "Who runs the World, Girls."</p>
+              <div class="row">
+                <input id="codeID_2" placeholder="Code">  </input>
+              </div>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" onclick="checkCode2()">Verifier</button>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Modal Aya -->
+     <div class="modal fade" id="AyaModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Enigme Personnalité</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="row enigme">
+               <p class="centered">Voici le code du cadenas : 1; 25; 1; 0; 14; 1; 11; 1; 13; 21; 18; 1;</p>
+               <p class="centered">Il s'agit d'une chanteuse francophone née à Bamako. Celle-ci s'inscrit dans une démarche féministe en assumant son ambition et en combatant pour la représentation des femmes noires.</p>
+              <div class="row">
+                <input id="codeID_3" placeholder="Code">  </input>
+              </div>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" onclick="checkCode3()">Verifier</button>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Modal Fin -->
+     <div class="modal fade" id="EndModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Le monde est sauvé</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="row enigme">
+               <p class="centered">Eh bien, ce ne fût pas facile ! Mais tu as réussi et le monde est sauvé, je te félicite.</p>
+               <p class="centered">En cliquant sur le bouton tu vas être redirigé vers la page d'accueil, et voir si tu es apparu sur le Hall of Fame !</p>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick = "self.location.href = 'index.html#hof'">Retourner à la page d'accueil</button>
+
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- Modal Temps Ecoulé -->
+     <div class="modal fade" id="GameOverModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+       <div class="modal-dialog" role="document">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Le monde est perdu...</h5>
+             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+             </button>
+           </div>
+           <div class="modal-body">
+             <div class="row enigme">
+               <p class="centered">Le temps est dépassé, tu as malheureusement perdu... Le monde court à sa perte...</p>
+               <p class="centered">Deux choix s'oofrent à toi, tu peux recommencer depuis le début ou être renvoyé sur la page d'accueil.</p>
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-primary" onclick = "self.location.href = 'geograministe.html'">Recommencer</button>
+             <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick = "self.location.href = 'index.html'">Retourner à la page d'accueil</button>
+           </div>
+         </div>
+       </div>
+     </div>
+
+</body>
+
+    <!-- Import js leaflet -->
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+     <!-- Script js-->
+     <script src="js/script_js/jeu.js"></script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+<title> Formulaire de contact </title>
+<meta charset="UTF8">
+
+    <!-- Import css bootstrap -->
+    <link rel="stylesheet" href="css/import_css/bootstrap.min.css">
+    <!-- Script css lié -->
+    <link rel="stylesheet" href="css/script_css/stylec.css">
+    <!-- Polices -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
+
+<body>
+
+<div class="container-fluid en-tête">
+<div class="row marge">
+  <div class="col-md-12"></div>
+ </div>
+ <div class="row">
+   <div class="col-md-12">
+     <p>Un soucis lors de ton enquête ?</p>
+     </div>
+    </div>
+    </div>
+  <div class="container-fluid margeh">
+    <div class="row">
+      <div class="col-md-12"></div>
+      </div>
+    </div>
+  <div class="container-fluid formulaire">
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-9">
+      <p id="prenom" class=""> </p>
+      <p id="nom" class=""> </p>
+      <p id="email" class=""> </p>
+    <form action="#" method="get" id="message">
+        <fieldset>
+        <p><label>Prénom</label><input type="text" id="texte" placeholder=" Sherlock" size=20 name="prenom"></p>
+        <p><label>Nom</label><input type="text" id="texte" placeholder=" Holmes" size=20 name="nom"></p>
+        <p><label>Age</label><select name="age">
+            <option value="18">0-18 ans</option>
+            <option value="30" selected>19-30 ans</option>
+            <option value="50">31-50 ans</option>
+            <option value="plus">Plus de 50ans</option>
+          </select></p>
+        <p><label>Email</label><input type="text" id="texte" placeholder=" sherlock.holmes@ensg.eu" size=40 name="email"></p>
+        <p><label>Ton message</label><br />
+          <textarea name="message" id="texte" placeholder=" J'ai perdu mon billet d'avion..."></textarea></p>
+        <p><input type="submit" name="valider" id="bouton" value="Envoyer !"></p>
+        <p> </p>
+        <p><input class="myButton" type="button" name="retour" id="bouton" value="Retour" onclick = "self.location.href = 'index.html'"> </p>
+        </fieldset>
+    </form>
+    </div>
+    </div>
+    </div>
+    <script src="js/script_js/formulaire.js"></script>
+  </body>
+</html>
